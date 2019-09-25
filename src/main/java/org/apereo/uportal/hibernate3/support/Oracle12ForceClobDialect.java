@@ -11,6 +11,10 @@ import org.hibernate.dialect.Oracle10gDialect;
  */
 public class Oracle12ForceClobDialect extends Oracle10gDialect {
 
+    public Oracle12ForceClobDialect() {
+        super();
+    }
+
     protected void registerCharacterTypeMappings() {
         super.registerCharacterTypeMappings();
         registerColumnType(Types.VARCHAR, "clob");
