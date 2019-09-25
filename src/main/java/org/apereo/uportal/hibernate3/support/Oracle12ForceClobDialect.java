@@ -13,6 +13,7 @@ public class Oracle12ForceClobDialect extends Oracle10gDialect {
 
     public Oracle12ForceClobDialect() {
         super();
+        registerColumnType(Types.VARCHAR, "clob");
     }
 
     protected void registerCharacterTypeMappings() {
