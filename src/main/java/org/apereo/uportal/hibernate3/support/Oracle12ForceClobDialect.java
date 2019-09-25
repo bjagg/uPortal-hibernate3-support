@@ -1,6 +1,7 @@
 package org.apereo.uportal.hibernate3.support;
 
 import java.sql.Types;
+
 import org.hibernate.dialect.Oracle10gDialect;
 
 /**
@@ -13,11 +14,15 @@ public class Oracle12ForceClobDialect extends Oracle10gDialect {
 
     public Oracle12ForceClobDialect() {
         super();
-        registerColumnType(Types.VARCHAR, "clob");
     }
 
     protected void registerCharacterTypeMappings() {
         super.registerCharacterTypeMappings();
         registerColumnType(Types.VARCHAR, "clob");
+    }
+
+    protected void registerLargeObjectTypeMappings() {
+        super.registerLargeObjectTypeMappings();
+        registerColumnType( Types.LONGVARCHAR, "clob");
     }
 }
